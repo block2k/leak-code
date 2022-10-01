@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: studentprofileservice 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: studentprofileservice
+  template:
+    metadata:
+      labels:
+        app: studentprofileservice 
+    spec:
+      containers:
+        - name: studentprofileservice 
+          image: nextfapacr.azurecr.io/studentprofileservice
+          ports:
+          - containerPort: 5000
